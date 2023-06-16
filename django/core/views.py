@@ -1,18 +1,19 @@
 from django.shortcuts import render
-from core.models import Produto
+from .models import Produto, Cliente
 
 # Create your views here.
 
 def index(request):
-    produtos = Produto.objects.all(
+
+    produtos = Produto.objects.all()
+    print('VIEWS: ', produtos)
         
-    )
     context = {
-        'curso': "Programação web com django framework",
-        'outro': 'django e massa',
-        'produto' : 'produtos',
+        '''curso': "Programação web com django framework",
+        'outro': 'django e massa','''
+        'produtos' : produtos,
     }
-    return render(request,'index.html', context)
+    return render(request, 'index.html', context)
 
 def contato(request):
     return render(request, 'contato.html')

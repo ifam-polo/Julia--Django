@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,11 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
 </head>
 <body>
     <h1>index</h1>
-    {{curso}}
-    {{outro}}
 
     <table>
         <thead>
@@ -19,10 +19,10 @@
             </tr>
         </thead>
         <tbody>
-        {% for produto in produtos%}
+        {% for produto in produtos %}
             <tr>
-                <td><a href="{% url 'produto' produto.id %}">{{produto.nome}}</a></td>
-                <td>{{produto.preco}}</td>
+                <td><a href="{% url 'produto' produto.id %}">{{ produto.nome }}</a></td>
+                <td>{{ produto.preco}}</td>
             </tr>
         {% endfor%}
         </tbody>
