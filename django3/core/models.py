@@ -1,5 +1,5 @@
 from django.db import models
-from stdimage.models import StdImageField
+#from stdimage.models import StdImageField
 
 # essa função seria pra mudar o nome do arquivo da imagem caso for igual para nçao acontecer sobrescrita
 def get_file_path(_instance, filename):
